@@ -1,0 +1,30 @@
+---
+title: "Quantitative Data"
+format: html
+---
+
+```{r}
+# install.packages("tidyverse")
+library(tidyverse)
+# install.packages("googlesheets4")
+library(googlesheets4)
+# install.packages("ggthemes")
+library(ggthemes)
+# install.packages("janitor")
+library(janitor)
+```
+
+```{r}
+url = "https://docs.google.com/spreadsheets/d/1o58IwMTCcuVz21E6RIcUJIt0g8D0tGRTPRuBH-Wd23s/edit?usp=sharing"
+df = read_sheet(url) |> 
+  clean_names()
+```
+
+```{r}
+df |> 
+  ggplot(aes(x = ...)) +
+  geom_boxplot()
+```
+
+
+
